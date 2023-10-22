@@ -1,0 +1,57 @@
+{
+  "host": "127.0.0.1",
+  "port": 50001,
+
+  "graphics_mode": "minotauro",
+  "image_directory": "./images/",
+
+  "background_color": "lightgray",
+  "step_color": "turquoise",
+  "view_color": "red",
+
+  "use_maps?": true,
+  "object_dictionary": {
+    " ": "free space",
+    "O": "visible obstacle",
+    "I": "invisible obstacle",
+    "B": "bomb",
+    "T": "targets",
+    "A": "agents"
+  },
+  "object_map":[
+    "OOOOOOOOOOOOOOOOOOOOOOOOO",
+    "O                 A     O",
+    "O                       O",
+    "O           OOO OOOO    O",
+    "O      A                O",
+    "O                       O",
+    "OO OOOOOOOOO            O",
+    "O                   OOO O",
+    "O  T                    O",
+    "O                     T O",
+    "O T            T        O",
+    "OOOOOOOOOOOOOOOOOOOOOOOOO"
+
+  ],
+  "weight_dictionary": {
+    "1": 1,
+    "2": 4,
+    "3": 6,
+    "4": 10,
+    "R": "random"
+  },
+  "weight_map" : [
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111",
+    "111111111111111111111111"
+  ]
+}

@@ -173,6 +173,18 @@ class Server(BaseException):
 
     def execute(self, cmd_type:str, value_type:str):
         res = ""
+        if cmd_type == 'move':
+            nr,res = value_type.split("_")
+            self.player_dict[nr].close_eyes()
+            pos = (self.player_dict[nr].get_x(),self.player_dict[nr].get_y())
+            max_coord = self.board.get_max_coord()
+            print(res[0])
+            if int(res[0]) < max_coord[0] and int(res[1]) < max_coord[1]:
+                if not self.board.is_target_obstacle(res) and not self.board.is_target_goal(res):
+                    self.board.change_position(self.player_dict[nr],res[0], res[1])
+            else:
+                res = pos
+
         if cmd_type == 'command':
             nr,value = value_type.split("_")
             # -----------------------
@@ -321,7 +333,7 @@ class Server(BaseException):
 
 
 def main():
-    with open("config.json") as config_file:
+    with open("config_big.json") as config_file:
         config = json.load(config_file)
     # Host and Port
     if len(sys.argv) == 3:
